@@ -16,7 +16,6 @@ export const Title = styled.h1`
   flex: 1;
   font-family: "Inter", sans-serif;
   font-size: 30px;
-  /* color: blueviolet; */
 `;
 
 export const Img = styled.img`
@@ -37,7 +36,8 @@ export const StyledLink = styled(Link)`
     width: 100%;
     background-color: blueviolet;
     z-index: 0;
-    transform: translateX(-100%);
+    transform: ${({ selected }) =>
+      selected ? "translateX(0%)" : "translateX(-100%)"};
     transition: transform 150ms ease-in-out;
   }
 
