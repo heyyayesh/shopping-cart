@@ -3,7 +3,7 @@ import background from "../../assets/home.jpg";
 
 export const Main = styled.main`
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100vh;
   background-image: url(${background});
   background-size: cover;
   background-position: center;

@@ -86,7 +86,7 @@ export const Filter = styled.div`
   justify-content: space-around;
   align-items: center;
   grid-column: 1 / -1;
-  margin-top: 30px;
+  margin-top: 100px;
   margin-bottom: 30px;
   width: 100%;
   flex-wrap: wrap;

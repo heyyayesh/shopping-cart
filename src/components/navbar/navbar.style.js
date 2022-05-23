@@ -10,6 +10,9 @@ export const Nav = styled.nav`
   gap: 50px;
   padding: 30px 40px;
   box-shadow: 0 0 10px gray;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 `;
 
 export const Title = styled.h1`
