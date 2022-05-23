@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Nav, Img, Title, StyledLink, Badge } from "./navbar.style";
 import homeIcon from "../../assets/home.svg";
 import productsIcon from "../../assets/shopping-bag.svg";
 import cartIcon from "../../assets/shopping-cart.svg";
 
 const NavBar = ({ selectedTab, setSelectedTab, cartCount }) => {
+  const homeButtonRef = useRef();
+  useEffect(() => homeButtonRef.current.click(), []);
   return (
     <Nav>
       <Title>Shopping Cart</Title>
@@ -12,6 +14,7 @@ const NavBar = ({ selectedTab, setSelectedTab, cartCount }) => {
         selected={selectedTab === "home" ? true : false}
         onClick={() => setSelectedTab("home")}
         to="/"
+        ref={homeButtonRef}
       >
         <Img src={homeIcon} alt="home icon" />
       </StyledLink>
