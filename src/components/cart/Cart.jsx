@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Main,
   CardImg,
@@ -12,9 +12,18 @@ import {
 
 import { CartCard, EmptyStatement, Button, Badge } from "./cart.style";
 import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
 
-const Cart = ({ cart, removeItemFromCart, setSelectedTab, emptyCart }) => {
+const Cart = ({
+  cart,
+  removeItemFromCart,
+  setSelectedTab,
+  emptyCart,
+  setCart,
+}) => {
   const navigate = useNavigate();
+  const [modalVisible, setModalVisible] = useState(false);
+  useEffect(() => setModalVisible(false), []);
 
   const cardElements = cart.map((item) => {
     return (
@@ -39,13 +48,26 @@ const Cart = ({ cart, removeItemFromCart, setSelectedTab, emptyCart }) => {
     return sum.toFixed(2);
   }
 
+  function handleCheckout() {
+    setModalVisible(true);
+    setTimeout(() => {
+      navigate("/");
+      setSelectedTab("home");
+      setCart([]);
+    }, 2000);
+  }
+
   return cart.length ? (
     <Main>
       <Actions>
-        <Button type="primary">{`Checkout (Subtotal $${calculateTotal()})`}</Button>
+        <Button
+          type="primary"
+          onClick={handleCheckout}
+        >{`Checkout (Subtotal $${calculateTotal()})`}</Button>
         <Button onClick={emptyCart}>Empty Cart</Button>
       </Actions>
       {cardElements}
+      {modalVisible && <Modal />}
     </Main>
   ) : (
     <EmptyStatement>

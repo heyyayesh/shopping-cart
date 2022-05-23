@@ -106,6 +106,7 @@ const App = () => {
               removeItemFromCart={removeItemFromCart}
               setSelectedTab={setSelectedTab}
               emptyCart={emptyCart}
+              setCart={setCart}
             />
           }
         />
