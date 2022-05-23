@@ -13,12 +13,23 @@ export const Nav = styled.nav`
   position: fixed;
   width: 100%;
   z-index: 1;
+
+  @media screen and (max-width: 450px) {
+    height: 60px;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 0;
+  }
 `;
 
 export const Title = styled.h1`
   flex: 1;
   font-family: "Inter", sans-serif;
   font-size: 30px;
+
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
 `;
 
 export const Img = styled.img`
@@ -29,6 +40,7 @@ export const StyledLink = styled(Link)`
   padding: 5px;
   position: relative;
   overflow: hidden;
+  background-size: cover;
 
   &::after {
     content: "";
