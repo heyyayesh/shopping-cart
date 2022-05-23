@@ -68,6 +68,7 @@ const Products = ({ products, addItemToCart }) => {
         <Category
           selected={category === "all"}
           onClick={() => setCategory("all")}
+          type="all"
         >
           All
         </Category>

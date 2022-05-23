@@ -6,6 +6,12 @@ export const Main = styled.main`
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 50px;
   place-items: center;
+
+  @media screen and (max-width: 450px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-rows: repeat(auto-fit, minmax(30px, 1fr)); */
+    margin: 0 20px 50px;
+  }
 `;
 
 export const Card = styled.div`
@@ -22,7 +28,9 @@ export const Card = styled.div`
   border-radius: 10px;
   justify-content: space-between;
 
-  &:hover {
+  @media screen and (max-width: 450px) {
+    width: 300px;
+    min-height: 520px;
   }
 `;
 
@@ -36,6 +44,10 @@ export const CardImg = styled.img`
 export const Title = styled.h3`
   font-family: "Inter", sans-serif;
   font-weight: 600;
+
+  @media screen and (max-width: 450px) {
+    font-size: 16px;
+  }
 `;
 
 export const Details = styled.div`
@@ -53,6 +65,10 @@ export const Price = styled.h3`
 export const Rating = styled.h3`
   font-family: "Karla", sans-serif;
   font-weight: 400;
+
+  @media screen and (max-width: 450px) {
+    font-size: 16px;
+  }
 `;
 
 export const AddToCart = styled.button`
@@ -91,6 +107,15 @@ export const Filter = styled.div`
   width: 100%;
   flex-wrap: wrap;
   gap: 20px;
+
+  @media screen and (max-width: 450px) {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 30px;
+    row-gap: 30px;
+    margin-bottom: 0;
+  }
 `;
 
 export const Category = styled.button`
@@ -113,5 +138,9 @@ export const Category = styled.button`
       0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
       0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
     border-radius: 10px;
+  }
+
+  @media screen and (max-width: 450px) {
+    grid-column: ${({ type }) => (type === "all" ? "span 2" : "span 1")};
   }
 `;
