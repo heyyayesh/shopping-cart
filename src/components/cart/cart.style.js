@@ -8,7 +8,7 @@ export const CartCard = styled(Card)`
 
 export const EmptyStatement = styled.div`
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +17,12 @@ export const EmptyStatement = styled.div`
   font-size: 32px;
   font-family: "Karla", sans-serif;
   font-weight: 700;
+
+  @media screen and (max-width: 450px) {
+    padding: 20px;
+    text-align: center;
+    gap: 40px;
+  }
 `;
 
 export const Button = styled(Category)`
@@ -29,6 +35,10 @@ export const Button = styled(Category)`
   padding: 10px 25px;
   flex: ${({ func }) => (func === "nav" ? "unset" : "1")};
   font-size: 18px;
+
+  @media screen and (max-width: 450px) {
+    grid-column: 1 / -1;
+  }
 `;
 
 export const Badge = styled.div`

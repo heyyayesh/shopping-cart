@@ -30,4 +30,8 @@ export const Section = styled.section`
   font-family: "Inter", sans-serif;
   font-weight: 400;
   color: blueviolet;
+
+  @media screen and (max-width: 450px) {
+    text-align: center;
+  }
 `;

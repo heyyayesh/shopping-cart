@@ -5,7 +5,7 @@ function Modal() {
   return (
     <Container>
       <Section>
-        <h1>Thanks for shopping with us!</h1>
+        <h1>Thanks for shopping with us! 💖</h1>
       </Section>
     </Container>
   );
