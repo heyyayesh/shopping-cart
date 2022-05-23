@@ -36,7 +36,7 @@ const Cart = ({ cart, removeItemFromCart, setSelectedTab, emptyCart }) => {
   function calculateTotal() {
     let sum = 0;
     cart.forEach((item) => (sum += item.product.price * item.count));
-    return sum;
+    return sum.toFixed(2);
   }
 
   return cart.length ? (
