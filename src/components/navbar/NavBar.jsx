@@ -4,7 +4,7 @@ import homeIcon from "../../assets/home.svg";
 import productsIcon from "../../assets/shopping-bag.svg";
 import cartIcon from "../../assets/shopping-cart.svg";
 
-const NavBar = ({ selectedTab, setSelectedTab }) => {
+const NavBar = ({ selectedTab, setSelectedTab, cartCount }) => {
   return (
     <Nav>
       <Title>Shopping Cart</Title>
@@ -28,7 +28,7 @@ const NavBar = ({ selectedTab, setSelectedTab }) => {
         to="/cart"
       >
         <Img src={cartIcon} alt="cart icon" />
-        <Badge>6</Badge>
+        {cartCount === 0 ? null : <Badge>{cartCount}</Badge>}
       </StyledLink>
     </Nav>
   );

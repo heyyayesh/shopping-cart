@@ -65,6 +65,7 @@ export const AddToCart = styled.button`
   height: 40px;
   font-size: 20px;
   cursor: pointer;
+  padding: 2px 5px;
   transform: scale(1);
   transition: transform 50ms ease-in-out;
 
@@ -96,9 +97,21 @@ export const Category = styled.button`
   flex: 1;
   font-size: 16px;
   height: 40px;
+  padding: 2px 5px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   background-color: ${({ selected }) =>
     selected ? "blueviolet" : "lightgray"};
   color: ${({ selected }) => (selected ? "white" : "black")};
+  transform: scale(1);
+  transition: transform 50ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+  }
 `;

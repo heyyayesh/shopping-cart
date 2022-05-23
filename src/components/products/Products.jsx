@@ -12,7 +12,9 @@ import {
   Category,
 } from "./products.style";
 
-const Products = ({ products }) => {
+import { EmptyStatement as Loading } from "../cart/cart.style";
+
+const Products = ({ products, addItemToCart }) => {
   const [shownProducts, setShownProducts] = useState(products);
   const [category, setCategory] = useState("all");
 
@@ -54,11 +56,13 @@ const Products = ({ products }) => {
         <Price>{`$ ${product.price}`}</Price>
         <Rating>{`Rating (${product.rating.count}) - ${product.rating.rate}/5.0`}</Rating>
       </Details>
-      <AddToCart onClick={() => console.log("button")}>Add to Cart</AddToCart>
+      <AddToCart onClick={() => addItemToCart(product.id)}>
+        Add to Cart
+      </AddToCart>
     </Card>
   ));
 
-  return (
+  return products.length ? (
     <Main>
       <Filter>
         <Category
@@ -94,6 +98,8 @@ const Products = ({ products }) => {
       </Filter>
       {cardElements}
     </Main>
+  ) : (
+    <Loading>Loading...</Loading>
   );
 };
 
