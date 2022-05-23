@@ -66,7 +66,11 @@ export const MobileHeading = styled.h1`
 export const Overlay = styled.div`
   position: absolute;
   width: 100%;
+  background: rgba(0, 0, 0, 0.1);
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
   z-index: 0;
+
+  @media screen and (max-width: 450px) {
+    background: rgba(0, 0, 0, 0.3);
+  }
 `;
