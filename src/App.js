@@ -93,6 +93,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home setSelectedTab={setSelectedTab} />} />
         <Route
+          path="/home"
+          element={<Home setSelectedTab={setSelectedTab} />}
+        />
+        <Route
           path="/products"
           element={
             <Products products={products} addItemToCart={addItemToCart} />
